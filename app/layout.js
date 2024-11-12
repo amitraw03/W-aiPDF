@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import {Sour_Gummy} from "next/font/google"
+import Provider from "./provider";
 
 
 export const metadata = {
@@ -16,7 +17,9 @@ export default function RootLayout({ children }) {
       <body
         className={customFont.className}
       >
+        <Provider>
         {children}
+        </Provider>
       </body>
     </html>
   );
