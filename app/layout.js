@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import {Sour_Gummy} from "next/font/google"
 import Provider from "./provider";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 export const metadata = {
@@ -13,6 +14,7 @@ const customFont = Sour_Gummy({subsets:['latin']})
 
 export default function RootLayout({ children }) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={customFont.className}
@@ -22,5 +24,6 @@ export default function RootLayout({ children }) {
         </Provider>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
