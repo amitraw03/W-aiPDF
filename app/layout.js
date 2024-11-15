@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import {Sour_Gummy} from "next/font/google"
-import Provider from "./provider";
-import { ClerkProvider } from "@clerk/nextjs";
+import {Sour_Gummy} from "next/font/google"  // custom font
+import Provider from "./provider";          // to get the convex server config on each children
+import { ClerkProvider } from "@clerk/nextjs";   // now have to enclose HTML tag in ClerkProvider
 
 
 export const metadata = {
@@ -14,7 +14,7 @@ const customFont = Sour_Gummy({subsets:['latin']})
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider >
     <html lang="en">
       <body
         className={customFont.className}
